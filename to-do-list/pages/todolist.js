@@ -27,7 +27,7 @@ function ToDoList(props) {
 
     }
 
-    const udateTask = () => {
+    const updateTask = () => {
 
     }
     
