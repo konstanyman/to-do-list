@@ -1,5 +1,5 @@
 // Import database
-const knex = require('../db')
+const knex = require('./../db')
 
 // Retrieve all tasks
 exports.tasksAll = async (req, res) => {
@@ -22,7 +22,9 @@ exports.tasksCreate = async (req, res) => {
   // Add new task to database
   knex('tasks')
     .insert({ // insert new record, a task
-      'task': req.body.task
+      'id': req.body.id,
+      'task': req.body.task,
+      'status': req.body.status
     })
     .then(() => {
       // Send a success message in response

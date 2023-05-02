@@ -21,16 +21,17 @@ knex.schema
     .then((exists) => {
       if (!exists) {
         // If no "tasks" table exists
-        // create new, with "id"and "task"
+        // create new, with "id", "task" and "status"
         // and use "id" as a primary identification
         // and increment "id" with every new record (task)
         return knex.schema.createTable('tasks', (table)  => {
-          table.increments('id').primary()
+          table.float('id').primary()
           table.string('task')
+          table.boolean('status')
         })
         .then(() => {
           // Log success message
-          console.log('Table \'Tasks\' created')
+          console.log('Table \'tasks\' created')
         })
         .catch((error) => {
           console.error(`There was an error creating table: ${error}`)
