@@ -1,15 +1,9 @@
 import React from 'react'
-import ToDoList from './todolist'
-
-
+import ToDoList from '../components/todolist'
 
 export default function Home() {
   return (
     <div>
-      <div>
-        <p>Menu</p>
-      </div>
-        <button>To-do-list</button> 
       <div>
         <ToDoList/>
       </div>

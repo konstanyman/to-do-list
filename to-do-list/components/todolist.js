@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+import ConfirmModal from "./confirmmodal";
+
 export default function ToDoList() {
     const [task, setTask] = useState('');
     const [tasks, setTasks] = useState([]);
+    const [taskModalVisible, setTaskModalVisible] = useState(false);
 
     useEffect(() => {
         fetchTasks()
@@ -79,20 +82,24 @@ export default function ToDoList() {
     return (
         <div>
             <div>
-                <p>To-do-list</p>
-            </div>
-            <div>
+                <h1>To-do-list</h1>
                 <input
                     value={task}
                     onChange={ (e) => setTask(e.target.value)}
                 />
-                <button onClick={handleTaskSubmit}>Add new task</button> 
-                <button>Menu</button>
-                <button onClick={fetchTasks}>Get all tasks</button>
-            </div>
-            <div>
-                
-            </div>            
+                <div>
+                    <button onClick={handleTaskSubmit}>Add task</button>
+                </div>
+                <div>
+                    <ul>
+                        {tasks.map((todolist) => {
+                            return <li key={todolist.id}>{todolist.task}</li>
+                        })}
+                    </ul>
+                </div>
+            </div>       
         </div>
     );
 };
+
+//{taskModalVisible  && <ConfirmModal text='Are you sure?' onClose={endAddTaskHandler} />}
