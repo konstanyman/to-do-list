@@ -60,28 +60,20 @@ export default function ToDoList() {
         setTask('');
     }
 
-    const addTask = () => {
-        
-    }
-    
-    const deleteTask = () => {
+    // Delete task
+    const handleTaskDelete = (id, task) => {
+        // Send DELETE request to 'tasks/"id"' endpoint
+        axios
+        .put('http://localhost:4001/tasks/delete', { id: id })
+        .then(() => {
 
-    }
+            console.info(`Task ${task} deleted.`)
 
-    const markDone = () => {
-
-    }
-
-    const cancelUpdate = () => {
-
-    }
-
-    const changeTask = (event) => {
-
-    }
-
-    const updateTask = () => {
-
+            // Fetch all tasks to refresh
+            // the tasks on the tasks list
+            fetchTasks()
+        })
+        .catch(error => console.error(`There was an error deleting the ${task} task: ${error}`))
     }
     
     return (
