@@ -90,6 +90,13 @@ export const ToDoWrapper = () => {
         );
     }
 
+    const handleKeyPress = e => {
+        //it triggers by pressing the enter key
+      if (e.keyCode === 13) {
+        handleTaskSubmit();
+      }
+    };
+
 
 
     return(
@@ -102,8 +109,9 @@ export const ToDoWrapper = () => {
                     value={task}
                     onChange={ (e) => setTask(e.target.value)}
                     maxLength='300'
+                    onKeyDown={handleKeyPress}
                 />
-                <button className='todo-btn' onClick={handleTaskSubmit}>Add Task</button>
+                <button id='myBtn' className='todo-btn' onClick={handleTaskSubmit}>Add Task</button>
             </div>
             <div>
                 <ul>
