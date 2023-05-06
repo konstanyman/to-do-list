@@ -1,12 +1,12 @@
 import React from 'react'
-import ToDoList from '../components/todolist'
+import { ToDoWrapper } from '@/components/todowrapper';
 
-export default function Home() {
+function Home() {
   return (
-    <div>
-      <div>
-        <ToDoList/>
-      </div>
+    <div className='Home'>
+        <ToDoWrapper />
     </div>
   )
 }
+
+export default Home;

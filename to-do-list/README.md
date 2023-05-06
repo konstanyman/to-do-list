@@ -2,6 +2,8 @@ To-do-list web application:
 
 Web page to-do-list application built with ReactJs. Express framework with CORS. Database with Sqlite3 and queries with Knex.js.
 
+Styled with CSS with imports from FontAwesome.
+
 Install express, knex, cors, nodemon, bodyParser, helmet and compression
 
 How to run:
