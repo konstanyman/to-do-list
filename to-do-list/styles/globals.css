@@ -91,24 +91,74 @@ h1 {
 }
 
 
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 1700px) {
+  h1 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 4rem;
+  }
+
   .TodoWrapper {
     background: #1A1A40;
     margin-top: 5rem;
-    padding: 2rem;
+    padding: 4rem;
     border-radius: 5px;
-    max-width: 1800px;
+    max-width: 1500px;
+    font-size: 120%;
+  }
+
+  .todo-input {
+    outline: none;
+    background: none;
+    border: 1px solid #8758ff;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 300px;
+    font-size: 120%;
+    color: #fff;
+  }
+
+  .todo-btn {
+    background: #8758ff;
+    color: #fff;
+    border: none;
+    padding: 0.55rem;
+    cursor: pointer;
+    font-size: 120%;
   }
 }
 
 
-@media only screen and (min-width: 1450px) and (max-width: 1900px) {
+@media only screen and (min-width: 1450px) and (max-width: 1700px) {
   .TodoWrapper {
     background: #1A1A40;
     margin-top: 5rem;
-    padding: 2rem;
+    padding: 3rem;
     border-radius: 5px;
-    max-width: 1350px;
+    max-width: 1250px;
+    font-size: 110%;
+  }
+
+  .todo-input {
+    outline: none;
+    background: none;
+    border: 1px solid #8758ff;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 300px;
+    font-size: 110%;
+    color: #fff;
+  }
+
+  .todo-btn {
+    background: #8758ff;
+    color: #fff;
+    border: none;
+    padding: 0.55rem;
+    cursor: pointer;
+    font-size: 110%;
   }
 }
 

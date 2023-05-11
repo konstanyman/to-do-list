@@ -15,6 +15,9 @@ router.get('/all', tasksRoutes.tasksAll)
 // '/create' translates to '/tasks/create'
 router.post('/create', tasksRoutes.tasksCreate)
 
+// '/toggle' translates to '/tasks/toggle'
+router.patch('/toggle', tasksRoutes.tasksToggle)
+
 // '/delete' translates to '/tasks/delete'
 router.put('/delete', tasksRoutes.tasksDelete)
 

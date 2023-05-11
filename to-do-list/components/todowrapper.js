@@ -66,28 +66,35 @@ export const ToDoWrapper = () => {
     }
 
     // Delete task
-    const handleTaskDelete = (id, task) => {
+    const handleTaskDelete = (id) => {
         // Send DELETE request to 'tasks/"id"' endpoint
         axios
         .put('http://localhost:4001/tasks/delete', { id: id })
-        .then(() => {
+        .then(res => {
 
-            console.info(`Task ${task} deleted.`)
+            console.info(`Task deleted.`)
 
             // Fetch all tasks to refresh
             // the tasks on the tasks list
             fetchTasks()
         })
-        .catch(error => console.error(`There was an error deleting the ${task} task: ${error}`))
+        .catch(error => console.error(`There was an error deleting task: ${error}`))
     }
 
     // Toggle task comletion
-    const toggleComplete = (id) => {
-        setTasks(
-          tasks.map((task) =>
-            task.id === id ? { ...task, status: !task.status } : task
-          )
-        );
+    const toggleComplete = (id, status) => {
+        // Send POST request to 'tasks/toggle' endpoint
+        axios
+        .patch('http://localhost:4001/tasks/toggle', { id: id, status: status })
+        .then(() => {
+
+            console.info(`Task edited.`)
+
+            // Fetch all tasks to refresh
+            // the tasks on the tasks list
+            fetchTasks()
+        })
+        .catch(error => console.error(`There was an error editing task: ${error}`))
     }
 
     const handleKeyPress = e => {

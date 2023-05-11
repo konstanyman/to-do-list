@@ -36,6 +36,22 @@ exports.tasksCreate = async (req, res) => {
     })
 }
 
+// Toggle status specific task
+exports.tasksToggle = async (req, res) => {
+  // Find specific task in the database and toggle status
+  knex('tasks')
+  .where('id', req.body.id) // find correct record based on id
+  .update('status', !(req.body.status))
+  .then(() => {
+    // Send a success message in response
+    res.json({ message: `Task ${req.body.task} edited. Status: ${req.body.status}` })
+  })
+  .catch(err => {
+    // Send a error message in response
+    res.json({ message: `There was an error editing ${req.body.task} task: ${err}` })
+  })
+}
+
 // Remove specific task
 exports.tasksDelete = async (req, res) => {
   // Find specific task in the database and remove it
