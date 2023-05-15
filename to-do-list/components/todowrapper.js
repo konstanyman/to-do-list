@@ -9,6 +9,7 @@ export const ToDoWrapper = () => {
     const [task, setTask] = useState('');
     const [tasks, setTasks] = useState([]);
 
+
     useEffect(() => {
         fetchTasks()
     }, [])
@@ -103,7 +104,6 @@ export const ToDoWrapper = () => {
         handleTaskSubmit();
       }
     };
-
 
 
     return(

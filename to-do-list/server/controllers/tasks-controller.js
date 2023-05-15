@@ -1,5 +1,5 @@
 // Import database
-const knex = require('./../db')
+const knex = require('../db/db')
 
 // Retrieve all tasks
 exports.tasksAll = async (req, res) => {

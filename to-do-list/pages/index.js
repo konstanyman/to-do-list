@@ -1,12 +1,23 @@
 import React from 'react'
-import { ToDoWrapper } from '@/components/todowrapper';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function Home() {
+import Layout from './Layout';
+import Home from './Home';
+import { CalendarView } from '@/components/calendar';
+
+
+function App() {
   return (
-    <div className='Home'>
-        <ToDoWrapper />
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="todo" element={<Home />} />
+          <Route path="calendar" element={<CalendarView />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default Home;
+export default App;
